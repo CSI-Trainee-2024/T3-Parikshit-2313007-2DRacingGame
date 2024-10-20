@@ -64,7 +64,7 @@ function moveCar(car) {
     }
     if (item.y >= 750) {
       item.y = -300;
-      item.style.left = Math.floor(Math.random() * 300) + "px"; //change
+      item.style.left = Math.floor(Math.random() * 280) + "px"; //change
     }
     item.y += player.speed;
     item.style.top = item.y + "px";
@@ -104,7 +104,7 @@ function gamePlay() {
                         Your Score: ${player.score} <br><br>
                         Highest Score: ${highest}
                       </div>`;
-    player.speed = 4 + Math.floor(player.score / 1000); //to increase difficulty
+    player.speed = 3 + Math.floor(player.score / 1000); //to increase difficulty
   }
 }
 
@@ -141,7 +141,7 @@ function start() {
     othercar.y = (x + 1) * 350 * -1;
     othercar.style.top = othercar.y + "px";
 
-    othercar.style.left = Math.floor(Math.random() * 350) + "px";
+    othercar.style.left = Math.floor(Math.random() * 310) + "px";
     gamearea.appendChild(othercar);
   }
 }
