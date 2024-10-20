@@ -75,6 +75,3 @@ If you have any questions or suggestions, feel free to reach out at:
 - Email: parikshitjaiswal82@gmail.com
 
 ---
-
-Replace placeholders (like `your-username`, `your-email@example.com`) with your actual information before uploading the file to GitHub.
-
