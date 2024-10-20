@@ -14,7 +14,7 @@
   /* background-color: brown; */
   position: absolute;
   bottom: 120px;
-  background-image: url(Images/car1.png);
+  background-image: url(images/car1.png);
   background-size: 80px 160px;
   /* padding: -100px;
     margin: -10px; */
@@ -27,7 +27,7 @@
   /* background-color: blue; */
   position: absolute;
   bottom: 120px;
-  background-image: url(Images/car2.png);
+  background-image: url(images/car2.png);
   background-size: 80px 160px;
   /* padding: -100px; */
 }
@@ -52,7 +52,7 @@
 }
 
 .CarGame {
-  background-image: url(Images/image.jpg);
+  background-image: url(images/image.jpg);
   background-size: cover;
 }
 

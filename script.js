@@ -1,9 +1,8 @@
 const score = document.querySelector(".Score");
 const startscreen = document.querySelector(".StartScreen");
 const gamearea = document.querySelector(".GameArea");
-let player = { speed: 4, score: 0, start: false }; //change karnsa hai
+let player = { speed: 3, score: 0, start: false }; //change karna hai
 let highest = 0;
-startscreen.addEventListener("click", start);
 
 let keys = {
   ArrowUp: false,
@@ -12,8 +11,11 @@ let keys = {
   ArrowLeft: false,
 };
 
+startscreen.addEventListener("click", start);
+
 document.addEventListener("keydown", keyDown);
 document.addEventListener("keyup", keyUp);
+
 function keyDown(ev) {
   ev.preventDefault();
   keys[ev.key] = true;
@@ -68,6 +70,7 @@ function moveCar(car) {
     item.style.top = item.y + "px";
   });
 }
+
 function gamePlay() {
   let car = document.querySelector(".car");
   let road = gamearea.getBoundingClientRect();
@@ -75,10 +78,10 @@ function gamePlay() {
   if (player.start) {
     moveLines();
     moveCar(car);
-    if (keys.ArrowUp && player.y > road.top + 70) {
+    if (keys.ArrowUp && player.y > road.top) {
       player.y -= player.speed;
     }
-    if (keys.ArrowDown && player.y < road.bottom - 70) {
+    if (keys.ArrowDown && player.y < road.bottom - 100) {
       player.y += player.speed;
     }
     if (keys.ArrowLeft && player.x > 0) {
@@ -92,6 +95,7 @@ function gamePlay() {
     car.style.left = player.x + "px";
 
     window.requestAnimationFrame(gamePlay);
+
     player.score++;
     if (player.score >= highest) {
       highest = player.score;
@@ -103,9 +107,11 @@ function gamePlay() {
     player.speed = 4 + Math.floor(player.score / 1000); //to increase difficulty
   }
 }
+
 function Reset() {
   highest = 0;
 }
+
 function start() {
   startscreen.classList.add("hide");
   gamearea.innerHTML = "";
